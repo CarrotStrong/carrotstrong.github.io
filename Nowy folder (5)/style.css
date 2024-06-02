@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #A79277;
+    backdrop-filter: brightness(75%);
+    color:#E4D9C5;
+    --sb-track-color: #E4D9C5;
+    --sb-thumb-color: #A79277;
+    --sb-size: 10px;
+    scroll-behavior: smooth;
+    overflow-x: hidden ;
+}
+
+body::-webkit-scrollbar {
+    width: var(--sb-size);
+}
+  
+body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+}
+  
+body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+}
+
+#top-info{
+    text-align: center;
+    font-weight: 600;
+    padding: 0.75rem 0;
+    background-color: rgba(0, 0, 0, 0.37);
+}
+
+.nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.logo{
+    width: min(35%, 250px);
+}
+
+.logo img{
+    width: 100%;
+    margin: 0 auto;
+    aspect-ratio: 5/2;
+}
+
+.icon-menu{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    & span{
+        width: 2rem;
+        color: #E4D9C5;
+        padding: 1rem;
+        & img{
+            width: 100%;
+        }
+        & img:hover{
+            scale: 1.1;
+        }
+    }
+}
+
+.menu{
+    user-select: none;
+    width: 100%;
+    font-weight: 600;
+    & ul{
+        margin-inline: auto;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        & li{
+            padding: 0 0.5rem;
+            font-size: 1.2rem;
+        }& li:hover{
+            color: #ecde15;
+        }
+    }
+}
+
+.shopping-menu{
+    height: 100%;
+    width: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color:#A79277;
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: all 0.2s ease-out;
+    overflow: hidden;
+    & .close-shopping-menu{
+        position: absolute;
+        top: 4.2rem;
+        right: 1.5rem;
+        width: 2.2rem;
+        height: 2.2rem;
+        /* outline: 1px red solid; */
+        background-color: #E4D9C5;
+        border-radius: 50%;
+        & img{
+            width: 100%;
+        }
+    }
+}
+
+.main{
+    width: min(100% - 2rem, 1200px);
+    display: grid;
+    margin-inline: auto;
+    grid-template-columns: 45% 45%;
+    gap: 1.2rem;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    padding: 2rem 0;
+}
+
+@media screen and (min-width: 769px) {
+    .main{
+        grid-template-columns: 30% 30% 30%;
+    }
+}
+
+.main-item{
+    text-align: center;
+    padding: 0.5rem;
+    transition: all 0.5s ease-out;
+    & img{
+        width: 100%;
+        filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.37));
+    } & .main-item-name{
+        font-weight: 900;
+    }
+}
+
+.main-item:hover img{
+    scale: 1.1;
+    transition: all 0.2s ease-out;
+}
+
+.main-item:hover .main-item-name{
+    color: #ecde15;
+}
+
+.back-to-top-button{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: 50%;
+    padding: 0.2rem;
+    width: 40px;
+    height: 40px;
+    & img{
+        width: 100%;
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0.37);
+    & .footer-info{
+        margin: 0 auto;
+        & ul{
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            & li{
+                padding: 0 0.25rem;
+                font-weight: 600;
+                user-select: none;
+            }& li:hover{
+                color: #ecde15;
+            }
+        }
+    }
+    & .footer-copyright{
+        padding-top: 1rem;
+        font-weight: 100;
+        font-size: 0.85rem;
+    }
+}
+
+.hide{
+    visibility: hidden;
+    display: none;
+}
+
+.menu-active{
+    font-weight: 900;
+}
